@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>mochiMoto</title>
         <meta charset="UTF-8">
-
     </head>
     <body>
-        <h1>Testing alert</h1>
-        <script src="index.js"></script>
-        <button onclick="alert('Boom!')">DON'T PRESS</button>
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        
+        <script> 
+            let paragraphs = document.body.getElementsByTagName("p");
+            document.body.replaceChild(paragraphs[1], paragraphs[2])
+            document.body.insertBefore(paragraphs[1], paragraphs[0]);
+
+            const node = document.createElement("title")
+            const textnode = document.createTextNode("mochiMoto");
+            node.appendChild(textnode)
+            document.head.appendChild(node);
+
+            document.body.insertBefore(paragraphs[1], paragraphs[0])
+
+            const newP = document.createElement("p"); 
+            const newPText = document.createTextNode("Three"); 
+            newP.appendChild(newPText);
+            document.body.appendChild(newP)
+        </script>
     </body>
 </html>
